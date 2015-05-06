@@ -8,7 +8,7 @@ Raw Dataset: [THE U.S. PROFESSIONAL SPORTS MARKET & FRANCHISE VALUE REPORT 2012]
 1. Download PDF report.
 2. Extract Tables from PDF using [Tabula](http://tabula.technology/). Takes about 10 Minutes to extract the two tables from the PDF report.
 3. Use dplyr pipelines in r to create separate dataframes for each sports league. Combine together using rbind.
-4. Use ggplot2 to analze the two datasets and see that there are two different trends.
+4. Use ggplot2 to visualize the two datasets and see that there are two different trends.
 5. Create D3 Visualization.
 
 **Tidy Datasets:**
