@@ -13,9 +13,10 @@ Raw Dataset: [THE U.S. PROFESSIONAL SPORTS MARKET & FRANCHISE VALUE REPORT 2012]
 
 **Tidy Datasets:**
 
-Dataset 1: Annual Revenue of each major sports league in North America (Figure 14 - Page 22)
+[Dataset 1: Annual Revenue of each major sports league in North America (Figure 14 - Page 22)](https://github.com/j450h1/Project-5-Data-Visualization-and-D3/blob/master/attendance.csv)
 
-Dataset 2: Annual Attendence of each major sports league in North America (Figure 5 - Page 8)
+[Dataset 2: Annual Attendence of each major sports league in North America (Figure 5 - Page 8)]
+(https://github.com/j450h1/Project-5-Data-Visualization-and-D3/blob/master/revenue.csv)
 
 **D3 Visualization**
 
