@@ -3,10 +3,18 @@ This is the fifth and final project as part of the Udacity Data Analyst Nanodege
 
 Raw Dataset: [THE U.S. PROFESSIONAL SPORTS MARKET & FRANCHISE VALUE REPORT 2012](https://www.wrhambrecht.com/wp-content/uploads/2013/09/SportsMarketReport_2012.pdf)
 
-Cleansing Steps:
+*Cleansing Steps:*
 
 1. Download PDF report.
-2. Extract Tables from PDF using [Tabula](http://tabula.technology/)
+2. Extract Tables from PDF using [Tabula](http://tabula.technology/). Takes about 10 Minutes to extract the tabkes from the PDF report.
 
-Tidy Dataset: 
+*Tidy Datasets:*
+
+Dataset 1: Annual Revenue of each major sports league in North America (Figure 14 - Page 22)
+
+Dataset 2: Annual Attendence of each major sports league in North America (Figure 5 - Page 8)
+
+*D3 Visualization*
+
+
 
