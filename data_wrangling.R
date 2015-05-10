@@ -95,6 +95,15 @@ ggplot(aes(x=as.numeric(Year),y=Revenue), data = revenue_df) +
 #Write to csv file
 write.csv(revenue_df,'revenue.csv', row.names=FALSE)
 
+df1 <- read.csv('attendance.csv') 
+df2 <- read.csv('revenue.csv')
+tidydf <- merge(df1,df2,by=c("Year","League"))
+library(dplyr)
+tidydf <- tidydf %>%
+          arrange(Year, Attendance)
+
+write.csv(tidydf,'tidy.csv', row.names=FALSE)
+
 #Visualization Idea  
 #Show a "pie-chart" like distribution for both tables
 #The pie in this case will be the map of Canada and USA
