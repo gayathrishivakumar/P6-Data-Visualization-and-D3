@@ -1,17 +1,63 @@
+<html>
 <head>
-<script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+	<title>Comparing North American Major Sports Leagues by Revenue &amp; Attendance</title>
+	<link href='http://fonts.googleapis.com/css?family=Lora' rel='stylesheet' type='text/css'>
+	<script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+	<script src="http://dimplejs.org/dist/dimple.v2.1.2.min.js"></script>
+<style>
+.customFont { font-family: ‘Metrophobic’, Arial, serif; font-weight: 400; }
+.customFont2 { font-family: ‘Metrophobic’, Arial, serif; font-weight: 100; }
+</style>
 </head>
 <body>
-	<p>Test</p>
+	<div id="chart-title"></div>
 	<div id="viz"></div>
+	<div id="viz2"></div>
+	<div id="years"></div> <!-- On the left have buttons for years-->
+ 
     <script type="text/javascript">
-	
-	d3.selectAll("p").style("color", "blue");
+    d3.csv("tidy.csv", function(d) {
+  return {
+    year: new Date(+d.Year, 0, 1), // convert "Year" column to Date
+    league: d.League,
+    attendance: +d.Attendance, // convert "Length" column to number
+    revenue: +d.Revenue
+  };
+}, function(error, rows) {
+  console.log(rows);
+});
     
-    var sampleSVG = d3.select("#viz")
+	</script>    
+</body>    
+
+    /*var w = 800;
+	var h = 600;
+	var text_color = "blue";
+	var heading_color = "gray";
+
+    d3.select("#chart-title")
+    	.append("h3")
+    	.text("Annual Revenue vs Attendance for 4 Most Popular Sports Leagues in North America")
+    	.attr("class","customFont")
+
+  /*  var svg = dimple.newSvg("body", w, h);
+
+    var dataset = []
+	d3.csv("tidy.csv", function(data) {
+   	dataset = data.map(function(d) { return [ +d["Year"], +d["League"],+d["Attendance"],+d["Revenue"] ]; });
+   	console.log(dataset)
+	});
+	
+	var sampleSVG = d3.select("#viz")
         .append("svg")
-        .attr("width", 100)
-        .attr("height", 100);    
+        .attr("width", w)
+        .attr("height", h);
+
+*/
+    /*var sampleSVG = d3.select("#viz2")
+        .append("svg")
+        .attr("width", w)
+        .attr("height", h);    
 
     sampleSVG.append("circle")
         .style("stroke", "gray")
@@ -21,6 +67,4 @@
         .attr("cy", 50)
         .on("mouseover", function(){d3.select(this).style("fill", "aliceblue");})
         .on("mouseout", function(){d3.select(this).style("fill", "white");});
-    </script>
-
-</body>
+	*/
