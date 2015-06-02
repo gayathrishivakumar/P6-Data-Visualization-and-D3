@@ -21,6 +21,8 @@
               height = 600 - margin;
 
           var svg = d3.select("body")
+          	.append("h1")
+          		.text(filter_year)
             .append("svg")
               .attr("width", width + margin)
               .attr("height", height + margin)
@@ -34,18 +36,23 @@
           var myChart = new dimple.chart(svg, chartdata);
           myChart.addMeasureAxis("x", "Revenue");
           myChart.addMeasureAxis("y", "Attendance");
-          myChart.addSeries("League", dimple.plot.bar);
+          myChart.addSeries("League", dimple.plot.bubble);
           myChart.addLegend(60, 10, 510, 20, "right");
-          myChart.draw();
+       	  myChart.draw();
+          //svg.exit().remove();
+          //myChart.exit().remove();
+          //svg.selectAll("*").remove();
         };
       </script>
     <style type="text/css">
       .customFont { font-family: ‘Metrophobic’, Arial, serif; font-weight: 400; }
     </style>
   </head>
-<body>
+<body>  
   <script type="text/javascript">
-  	var view_year = "2006";
+  	//var view_year = "2006";
+  	var years = ["2006","2007","2008","2009","2010","2011"];
+  	var i = 0;
   /*
     Use D3 (not dimple.js) to load the CSV file
     and pass the contents of it to the draw function
@@ -61,11 +68,11 @@
       }, 
       function(dataset){
           // code to generate chart goes here
-          draw(dataset, view_year);
-          console.log(dataset);
+          for (i = 0; i < years.length; i++) { 
+    	  	draw(dataset, years[i]);
+          	console.log(dataset);
+		  };
         });
-
-      //draw(view_year));
   </script>
 </body>
 </html>
