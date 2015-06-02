@@ -1,4 +1,4 @@
 References
 
 https://www.wrhambrecht.com/wp-content/uploads/2013/09/SportsMarketReport_2012.pdf
-
+https://github.com/PMSI-AlignAlytics/dimple/wiki/dimple.chart
