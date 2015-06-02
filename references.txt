@@ -2,3 +2,5 @@ References
 
 https://www.wrhambrecht.com/wp-content/uploads/2013/09/SportsMarketReport_2012.pdf
 https://github.com/PMSI-AlignAlytics/dimple/wiki/dimple.chart
+http://stackoverflow.com/questions/676324/div-background-color-to-change-onhover
+http://stackoverflow.com/questions/4938716/align-div-elements-side-by-side

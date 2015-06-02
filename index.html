@@ -23,6 +23,7 @@
           var svg = d3.select("body")
           	.append("h1")
           		.text(filter_year)
+          		.attr("align","center")
 			.append("p")
           		.text("Annual Attendance vs Annual Revenue for Major Sports Leagues")
           		.attr("align","center")
@@ -39,7 +40,7 @@
           myChart.addMeasureAxis("x", "Revenue");
           myChart.addMeasureAxis("y", "Attendance");
           myChart.addSeries("League", dimple.plot.bubble);
-          myChart.addLegend(60, 10, 510, 20, "right");
+          //myChart.addLegend(60, 10, 510, 20, "right");
           myChart.ease = "bounce";
           myChart.staggerDraw = true;
        	  myChart.draw(1000);
@@ -49,16 +50,21 @@
         };
       </script>
     <style type="text/css">
-      .customFont { font-family: ‘Metrophobic’, Arial, serif; font-weight: 400; }
+      .customFont { font-family: ‘Metrophobic’, Arial, serif; font-weight: 400;}
+      .div_NHL { background-color: #c2e487; float:left; margin-right: 10px;}
+      .div_NBA { background-color: #ebb980; float:left; margin-right: 10px;}
+      .div_MLB { background-color: #ebbbb5; float:left;margin-right: 10px;}
+      .div_NFL { background-color: #95b8d1; float:left;margin-right: 10px;}
     </style>
   </head>
 <body>  
-  <img src="images/nhl-on.png" alt="NHL" align="middle">
-  <img src="images/nba-on.png" alt="NBA" align="middle">
-  <img src="images/mlb-on.png" alt="MLB"
-  align="middle">
-  <img src="images/nfl-on.png" alt="NFL"
-  align="middle">
+  <div class="div_NHL"><p>    </p><img src="images/nhl-on.png" alt="	NHL" align="middle"><p>    </p></div>
+  <div class="div_NBA"><p>    </p><img src="images/nba-on.png" alt="NBA" align="middle"><p>    </p></div>
+  <div class="div_MLB"><p>    </p><img src="images/mlb-on.png" alt="MLB"
+  align="middle"><p>    </p></div>
+  <div class="div_NFL"><p>    </p><img src="images/nfl-on.png" alt="NFL"
+  align="middle"><p>    </p></div>
+  <div>
   <script type="text/javascript">
   	//var view_year = "2006";
   	var years = ["2006","2007","2008","2009","2010","2011"];
@@ -88,5 +94,6 @@
 		  },1000); //Animation changes after 1 second
         });
   </script>
+  </div>
 </body>
 </html>
