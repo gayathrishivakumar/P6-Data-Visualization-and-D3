@@ -14,6 +14,7 @@
             .remove
           console.log(filter_year);
         };
+      //var chartdata = data;
       var chartdata = dimple.filterData(data, "Year", filter_year);
 
       //var chartdata = data;
@@ -46,9 +47,12 @@
           var svg = d3.selectAll("circle")
             .attr('r', 15);
           myChart.addMeasureAxis("x", "Revenue");
+          //var xScale = d3.scale.linear()  // xScale is width of graphic - 8 billion is max
+          //                .domain([0,8000000000])
+          //                .range([margin, width - margin * 2]); // output range
           //x.overrideMax = 1000000000;
           //x.overrideMin = 0;
-          myChart.addMeasureAxis("y", "Attendance");
+          //myChart.addMeasureAxis("y", "Attendance");
           myChart.addSeries("League", dimple.plot.bubble);
           //myChart.addLegend(60, 10, 510, 20, "right");
           //scale should be constant
@@ -92,8 +96,8 @@
           };
       }, 
       function(dataset){
-		  var i = 0;
-		  var year_interval = setInterval(function() {
+		    var i = 0;
+		    var year_interval = setInterval(function() {
 		  	draw(dataset,years[i]);
         //d3.selectAll("svg,h1,p")
         //  .remove();

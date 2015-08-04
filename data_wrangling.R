@@ -3,7 +3,7 @@
 #2nd Table - Yearly Attendence per League
 
 #Set working directory
-getwd(); setwd('./Project-5-Data-Visualization-and-D3')
+getwd(); setwd('./P6-Data-Visualization-and-D3')
 
 ##Import Data
 list.files(getwd())
@@ -98,14 +98,31 @@ write.csv(revenue_df,'revenue.csv', row.names=FALSE)
 df1 <- read.csv('attendance.csv') 
 df2 <- read.csv('revenue.csv')
 tidydf <- merge(df1,df2,by=c("Year","League"))
+
+View(tidydf)
+
 library(dplyr)
 tidydf <- tidydf %>%
           arrange(Year, Attendance)
 
 write.csv(tidydf,'tidy.csv', row.names=FALSE)
 
-#Visualization Idea  
-#Show a "pie-chart" like distribution for both tables
-#The pie in this case will be the map of Canada and USA
+tidydf$uniqueid <- paste0(as.character(tidydf$League),as.character(tidydf$Year))
+tidydf <- tidydf[,c(5,1,2,3,4)]
 
+write.csv(tidydf,'dataset.csv', row.names=FALSE)
 
+# #try one in the actual numbers format
+# millionsdf <- tidydf
+# millionsdf$Attendance <- millionsdf$Attendance*1000000 
+# millionsdf$Revenue <- millionsdf$Revenue*1000000
+# #Create a unique id for each row (composite key of League+year)
+# #reorder columns so uniqueid is #1
+# 
+# write.csv(millionsdf,'millions.csv', row.names=FALSE)
+# #billions for Revenue and Millions for attendence
+# billionsdf <- millionsdf
+# billionsdf$Attendance <- billionsdf$Attendance/1000000 
+# billionsdf$Revenue <- round(billionsdf$Revenue/1000000000,1)
+# 
+# write.csv(billionsdf,'billions.csv', row.names=FALSE)
