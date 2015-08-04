@@ -8,8 +8,14 @@
   <script src="http://dimplejs.org/dist/dimple.v2.0.0.min.js"></script>
     <script type="text/javascript">
       function draw(data,filter_year) {
-      
+        //svg.selectAll("circle").remove();
+        if (filter_year == "2006") {
+          d3.selectAll("svg,h1,p")
+            .remove
+          console.log(filter_year);
+        };
       var chartdata = dimple.filterData(data, "Year", filter_year);
+
       //var chartdata = data;
       /*
         D3.js setup code
@@ -24,7 +30,7 @@
           	.append("h1")
           		.text(filter_year)
           		.attr("align","center")
-			.append("p")
+			      .append("p")
           		.text("Annual Attendance vs Annual Revenue for Major Sports Leagues")
           		.attr("align","center")
             .append("svg")
@@ -37,13 +43,19 @@
       */
 
           var myChart = new dimple.chart(svg, chartdata);
+          var svg = d3.selectAll("circle")
+            .attr('r', 15);
           myChart.addMeasureAxis("x", "Revenue");
+          //x.overrideMax = 1000000000;
+          //x.overrideMin = 0;
           myChart.addMeasureAxis("y", "Attendance");
           myChart.addSeries("League", dimple.plot.bubble);
           //myChart.addLegend(60, 10, 510, 20, "right");
+          //scale should be constant
+
           myChart.ease = "bounce";
           myChart.staggerDraw = true;
-       	  myChart.draw(1000);
+       	  myChart.draw(1500);
           //svg.exit().remove();
           //myChart.exit().remove();
           //svg.selectAll("*").remove();
@@ -60,10 +72,8 @@
 <body>  
   <div class="div_NHL"><p>    </p><img src="images/nhl-on.png" alt="	NHL" align="middle"><p>    </p></div>
   <div class="div_NBA"><p>    </p><img src="images/nba-on.png" alt="NBA" align="middle"><p>    </p></div>
-  <div class="div_MLB"><p>    </p><img src="images/mlb-on.png" alt="MLB"
-  align="middle"><p>    </p></div>
-  <div class="div_NFL"><p>    </p><img src="images/nfl-on.png" alt="NFL"
-  align="middle"><p>    </p></div>
+  <div class="div_MLB"><p>    </p><img src="images/mlb-on.png" alt="MLB" align="middle"><p>    </p></div>
+  <div class="div_NFL"><p>    </p><img src="images/nfl-on.png" alt="NFL" align="middle"><p>    </p></div>
   <div>
   <script type="text/javascript">
   	//var view_year = "2006";
@@ -85,13 +95,14 @@
 		  var i = 0;
 		  var year_interval = setInterval(function() {
 		  	draw(dataset,years[i]);
-
+        //d3.selectAll("svg,h1,p")
+        //  .remove();
 		  	i++;
 
 		  	if(i > years.length) {
 		  		clearInterval(year_interval);
 		  	}
-		  },1000); //Animation changes after 1 second
+		  },2000); //Animation changes after 1 second
         });
   </script>
   </div>
