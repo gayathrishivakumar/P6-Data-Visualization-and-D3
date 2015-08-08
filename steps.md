@@ -15,9 +15,13 @@ Raw Dataset: [THE U.S. PROFESSIONAL SPORTS MARKET & FRANCHISE VALUE REPORT 2012]
 9. Refined and redid the visualization, incorporating the feedback, but this time in full d3.
 10. Received final feedback and made final revisions.
 
-**Tidy Datasets:**
+**Raw PDF to CSV Dataset**
 
 
+
+**Tidy Dataset:**
+
+https://github.com/j450h1/P6-Data-Visualization-and-D3/blob/master/dataset.csv
 
 **D3 Visualization**
 
