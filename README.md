@@ -4,11 +4,13 @@ This is the sixth project as part of the Udacity Data Analyst Nanodegee. I was t
 
 I chose option 3 (hardest): I found my own data set (converted it from its original PDF form to a tidy dataset using R - see steps.md for more details), investigated it, and shared my findings in a visualization. The final graphic is mostly explanatory as the viewer clicks through the successive years, but it also has an exploratory component as the user can compare any year with the first year (2006) to see the difference.
 
-####Original
+##Original Visualization
+
 The original dimple.js visualization I created before receiving feedback can be found [here](
 http://bl.ocks.org/j450h1/d9c62059cd2c86d611c3).
 
-###Final
+##Final Visualization
+
 The final d3 visualization and code used to generate it can be viewed [here](http://bl.ocks.org/j450h1/4846a5a62defddb139f7).
 
 
