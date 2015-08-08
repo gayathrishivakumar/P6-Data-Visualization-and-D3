@@ -24,6 +24,8 @@ I decided to allow the user to animate using buttons to allow the users to see t
 
 I decided to include redundant information in the plot title in case people were not familiar with all the logos (I'm assuming most would know at least one logo). I decided to let the user click so if they wanted to compare a year to 2006 they could do that by resetting and then not clicking the years in order.
 
+I decided to put Revenue on the x-axis as that is the metric that had the largest movement over the years and I wanted to highlight it. I found (anecdotally) that is better to see this change from left to right instead of down to up as the years change.
+
 ###Feedback
 
 "Nice dataset. I would suggest you to set the same scale for all your x-axis. Also, I don't know if it was your intention, but your animation are adding extra charts, not changing the existing one."
