@@ -15,18 +15,16 @@ Raw Dataset: [THE U.S. PROFESSIONAL SPORTS MARKET & FRANCHISE VALUE REPORT 2012]
 9. Refined and redid the visualization, incorporating the feedback, but this time in full d3.
 10. Received final feedback and made final revisions.
 
-**Raw PDF to CSV Datasets**
+**Raw Datasets (extracted from PDF)**
 
 https://github.com/j450h1/P6-Data-Visualization-and-D3/blob/master/Regular_Season_Attendance_M.csv
 
+https://github.com/j450h1/P6-Data-Visualization-and-D3/blob/master/Annual_Revenue_By_League.csv
 
-
-**Tidy Dataset:**
+**Tidy Dataset (after Data Munging in R):**
 
 https://github.com/j450h1/P6-Data-Visualization-and-D3/blob/master/dataset.csv
 
-**D3 Visualization**
+**D3 Visualization (based off of Tidy Dataset)**
 
 (http://bl.ocks.org/j450h1/4846a5a62defddb139f7)
-
-
