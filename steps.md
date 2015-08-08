@@ -9,19 +9,18 @@ Raw Dataset: [THE U.S. PROFESSIONAL SPORTS MARKET & FRANCHISE VALUE REPORT 2012]
 3. Use dplyr pipelines in r to create separate dataframes for each sports league. Combine together using rbind.
 4. Use ggplot2 to visualize the two datasets and see that there are two different trends.
 5. Use Tableau to create the first mockup.
-6. Use rCharts library in R to make 2nd mockup of scatterplot
-7. Create static visualization using D3 and Dimple.js.
-8. Create animated visualization which is an author driven-narrative. 
-
+6. Used R to make 2nd mockup of scatterplot
+7. Create visualization in dimple.js
+8. Recevied feedback through the Udacity forums from other students.
+9. Refined and redid the visualization, incorporating the feedback, but this time in full d3.
+10. Received final feedback and made final revisions.
 
 **Tidy Datasets:**
 
-[Dataset 1: Annual Revenue of each major sports league in North America (Figure 14 - Page 22)](https://github.com/j450h1/Project-5-Data-Visualization-and-D3/blob/master/attendance.csv)
 
-[Dataset 2: Annual Attendence of each major sports league in North America (Figure 5 - Page 8)]
-(https://github.com/j450h1/Project-5-Data-Visualization-and-D3/blob/master/revenue.csv)
 
 **D3 Visualization**
 
+(http://bl.ocks.org/j450h1/4846a5a62defddb139f7)
 
 
