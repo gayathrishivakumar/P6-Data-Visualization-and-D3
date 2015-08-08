@@ -11,7 +11,7 @@ http://bl.ocks.org/j450h1/d9c62059cd2c86d611c3).
 
 ##Final Visualization
 
-The final d3 visualization and code used to generate it can be viewed [here](http://bl.ocks.org/j450h1/4846a5a62defddb139f7).
+The final d3.js visualization and code used to generate it can be viewed [here](http://bl.ocks.org/j450h1/4846a5a62defddb139f7).
 
 
 ###Summary
