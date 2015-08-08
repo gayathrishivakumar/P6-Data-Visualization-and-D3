@@ -1,6 +1,6 @@
 # P6-Data-Visualization-and-D3
 
-This is the sixth project as part of the Udacity Data Analyst Nanodegee. I was tasked to create a data visualization from a data set that tells a story and allows a reader to explore trends or patterns. I used d3.js to create the visualization. My work is a reflection of the theory and practice of data visualization, such as visual encodings, design principles, and effective communication.
+This is the sixth project as part of the Udacity Data Analyst Nanodegee. I was tasked to create a data visualization from a data set that tells a story and allows a viewer to explore trends or patterns. I used d3.js to create the visualization. My work is a reflection of the theory and practice of data visualization, such as visual encodings, design principles, and effective communication.
 
 I chose option 3 (hardest): I found my own data set (converted it from its original PDF form to a tidy dataset using R - see steps.md for more details), investigated it, and shared my findings in a visualization. The final graphic is mostly explanatory as the viewer clicks through the successive years, but it also has an exploratory component as the user can compare any year with the first year (2006) to see the difference.
 
