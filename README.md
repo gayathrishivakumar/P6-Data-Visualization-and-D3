@@ -2,6 +2,8 @@
 
 This is the sixth project as part of the Udacity Data Analyst Nanodegee. I created a data visualization from a data set that tells a story and allows a reader to explore trends or patterns. I used d3.js to create the visualization. My work is a reflection of the theory and practice of data visualization, such as visual encodings, design principles, and effective communication.
 
+I chose option 3 (hardest option): I found my own data set, investigated it, and shared my findings in a visualization. The final graphic is mostly explanatory as the viewer clicks through the successive years, but it also has an exploratory component as the user can compare any year with the first year (2005) to visualize the change.
+
 ####Original
 The original dimple.js visualization I created before receiving feedback can be found [here](
 http://bl.ocks.org/j450h1/d9c62059cd2c86d611c3).
@@ -37,6 +39,3 @@ http://stackoverflow.com/questions/4938716/align-div-elements-side-by-side
 http://bl.ocks.org/weiglemc/6185069
 http://bl.ocks.org/nikolay-shenkov/raw/3c05dd0ec4b86cdbb968/
 http://bl.ocks.org/weiglemc/6185069
-
-
-
