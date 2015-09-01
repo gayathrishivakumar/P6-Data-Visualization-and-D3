@@ -1,0 +1,145 @@
+#scatter-container {
+    width: 62%;
+    float: left;
+    margin-left: 50px;
+    margin-right: 25px;
+}
+
+#viz2 {
+    width: 62%;
+    float: left;
+    margin-left: 50px;
+    margin-top: 10px;
+    margin-right: 25px;
+}
+
+#viz3 {
+    width: 62%;
+    float: left;
+    margin-left: 50px;
+    margin-top: 10px;
+    margin-right: 25px;
+}
+
+#viz4 {
+    width: 62%;
+    float: left;    
+    margin-top: 10px;
+    margin-right: 25px;
+}
+
+#buttons-container {
+    float: center;
+    margin-left: 50px;
+}
+
+#graphbuttons-container {
+    margin-top: 10px;
+    margin-left: 50px;
+}
+
+#text-container {
+    float: center;
+    margin-bottom: 10px;
+    margin-left: 50px;
+    margin-top: 10px;
+}
+
+#logos-container {
+    float: left;
+}
+
+.buttons {
+    font-size: 22px;
+    margin-bottom: 30px;
+    font-family: Verdana;
+    border-radius: 10px;
+}
+
+.resetbuttons {
+    font-size: 22px;
+    margin-bottom: 30px;
+    font-family: Verdana;
+    border-radius: 10px;
+}
+
+.graphbuttons {
+    font-size: 16px;
+    margin-bottom: 0px;
+    font-family: Verdana;
+    border-radius: 0px;
+}
+
+#title {
+    font-family: Verdana;
+    font-size: 30px;
+    font-weight: normal;
+    margin-left: 50px;
+}
+
+footer {
+    width: 100%;
+    float: left;
+    display: block;
+}
+
+
+.all-axis path,
+.all-axis line {
+    fill: none;
+    stroke: black;
+    shape-rendering: crispEdges;
+}
+
+.country {
+    opacity: 0.6;
+}
+
+.grid-line {
+    opacity: 0.05    ;
+}
+
+.tooltip {
+  position: absolute;
+  width: 350px;
+  font-size: 20px;
+  font-family: sans-serif;
+  pointer-events: none;
+  text-align: center;
+}
+
+.metrics, ol {
+    font-size: 18px;
+    font-family: Helvetica;
+}
+
+h2 {
+    font-family: Verdana;
+    font-weight: normal;
+    font-size: 20px;
+}
+
+footer {
+    margin-left: 50px;
+    margin-bottom: 20px;
+}
+.div_NHL { 
+    background-color: #c2e487; 
+    float:right; 
+    margin-right: 25px;
+}
+.div_NBA { 
+    background-color: #ebb980; 
+    float:right; 
+    margin-right: 25px;
+}
+.div_MLB { 
+    background-color: #ebbbb5; 
+    float:right; 
+    margin-right: 25px;
+}
+.div_NFL { 
+    background-color: #95b8d1; 
+    float:right; 
+    margin-right: 25px;
+}

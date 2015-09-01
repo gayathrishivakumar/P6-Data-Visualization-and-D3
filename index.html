@@ -1,114 +1,77 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <meta charset="utf-8">
-  <title>Comparing Revenue &amp; Attendance Across Leagues (NHL, NBA, MLB, NFL)</title>
-  <link href='http://fonts.googleapis.com/css?family=Lora' rel='stylesheet' type='text/css'>
-  <script src="http://d3js.org/d3.v3.min.js"></script>
-  <script src="http://dimplejs.org/dist/dimple.v2.0.0.min.js"></script>
-    <script type="text/javascript">
-      function draw(data,filter_year) {
-        //svg.selectAll("circle").remove();
-        if (filter_year == "2006") {
-          d3.selectAll("svg,h1,p")
-            .remove
-          console.log(filter_year);
-        };
-      //var chartdata = data;
-      var chartdata = dimple.filterData(data, "Year", filter_year);
-
-      //var chartdata = data;
-      /*
-        D3.js setup code
-      */
-
-          "use strict";
-          var margin = 75,
-              width = 1400 - margin,
-              height = 600 - margin;
-
-          var svg = d3.select("body")
-          	.append("h1")
-          		.text(filter_year)
-          		.attr("align","center")
-			      .append("p")
-          		.text("Annual Attendance vs Annual Revenue for Major Sports Leagues")
-          		.attr("align","center")
-            .append("svg")
-              .attr("width", width + margin)
-              .attr("height", height + margin)
-            .append('g')
-                .attr('class','chart');
-      /*
-        Dimple.js Chart construction code
-      */
-
-          var myChart = new dimple.chart(svg, chartdata);
-          var svg = d3.selectAll("circle")
-            .attr('r', 15);
-          myChart.addMeasureAxis("x", "Revenue");
-          //var xScale = d3.scale.linear()  // xScale is width of graphic - 8 billion is max
-          //                .domain([0,8000000000])
-          //                .range([margin, width - margin * 2]); // output range
-          //x.overrideMax = 1000000000;
-          //x.overrideMin = 0;
-          //myChart.addMeasureAxis("y", "Attendance");
-          myChart.addSeries("League", dimple.plot.bubble);
-          //myChart.addLegend(60, 10, 510, 20, "right");
-          //scale should be constant
-
-          myChart.ease = "bounce";
-          myChart.staggerDraw = true;
-       	  myChart.draw(1500);
-          //svg.exit().remove();
-          //myChart.exit().remove();
-          //svg.selectAll("*").remove();
-        };
-      </script>
-    <style type="text/css">
-      .customFont { font-family: ‘Metrophobic’, Arial, serif; font-weight: 400;}
-      .div_NHL { background-color: #c2e487; float:left; margin-right: 10px;}
-      .div_NBA { background-color: #ebb980; float:left; margin-right: 10px;}
-      .div_MLB { background-color: #ebbbb5; float:left;margin-right: 10px;}
-      .div_NFL { background-color: #95b8d1; float:left;margin-right: 10px;}
-    </style>
-  </head>
-<body>  
-  <div class="div_NHL"><p>    </p><img src="images/nhl-on.png" alt="	NHL" align="middle"><p>    </p></div>
-  <div class="div_NBA"><p>    </p><img src="images/nba-on.png" alt="NBA" align="middle"><p>    </p></div>
-  <div class="div_MLB"><p>    </p><img src="images/mlb-on.png" alt="MLB" align="middle"><p>    </p></div>
-  <div class="div_NFL"><p>    </p><img src="images/nfl-on.png" alt="NFL" align="middle"><p>    </p></div>
-  <div>
-  <script type="text/javascript">
-  	//var view_year = "2006";
-  	var years = ["2006","2007","2008","2009","2010","2011"];
-  /*
-    Use D3 (not dimple.js) to load the CSV file
-    and pass the contents of it to the draw function
-    */
-
-     d3.csv("tidy.csv", function(d) {
-          return {
-              Year: d.Year, // convert "Year" column to Date
-              League: d.League,
-              Attendance: +d.Attendance, // convert "Length" column to number
-              Revenue: +d.Revenue
-          };
-      }, 
-      function(dataset){
-		    var i = 0;
-		    var year_interval = setInterval(function() {
-		  	draw(dataset,years[i]);
-        //d3.selectAll("svg,h1,p")
-        //  .remove();
-		  	i++;
-
-		  	if(i > years.length) {
-		  		clearInterval(year_interval);
-		  	}
-		  },2000); //Animation changes after 1 second
-        });
-  </script>
+    <meta charset="utf-8">
+    <title align = "left">Revenue &amp; Attendance Across Sports Leagues (NHL, NBA, MLB, &amp; NFL)</title>
+    <link rel="stylesheet" type="text/css" href="styles.css"/>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.5/d3.min.js"></script>
+    <script src="http://www.d3plus.org/js/d3plus.js"></script>
+</head>
+<body>
+<header id="title-container">
+    <h1 id="title">Revenue &amp; Attendance Across Sports Leagues (NHL, NBA, MLB, &amp; NFL)</h1>
+</header>
+<div id="graphbuttons-container"> 
+  <button id="graph1" class="graphbuttons">1. Revenue & Attendance Comparison</button>
+  <button id="graph2" class="graphbuttons">2. Avg Revenue/Fan</button>
+  <button id="graph3" class="graphbuttons">3. Revenue & Attendance - % Growth YOY</button>
+</div> 
+<section id="scatter-container"></section>
+<div id="viz2"></div>
+<div id="viz3"></div>
+<div id="viz4"></div>
+<div id="text-container">
+<text id="caption"> The NFL has the lowest attendance, but earns the most Revenue, while MLB has at least 3X more fans compared to each of the other leagues, yet is still 2nd in Revenue. Click through to see if this pattern has changed over the years.</text> 
+</div>
+<div id="buttons-container">  
+  <button id="reset" class="resetbuttons">Reset</button>
+  <br class = "break">
+  <!--When these buttons are pressed, the data points for that year appear -->
+  <button id="Y2006" class="buttons">2006</button>
+  <br class = "break">
+  <button id="Y2007" class="buttons">2007</button>
+  <br class = "break">
+  <button id="Y2008" class="buttons">2008</button>
+  <br class = "break">
+  <button id="Y2009" class="buttons">2009</button>
+  <br class = "break">
+  <button id="Y2010" class="buttons">2010</button>
+  <br class = "break">
+  <button id="Y2011" class="buttons">2011</button>
+  <br class = "break">
+  <div id="logos-container">
+  <!--These logos act as a legend, each league is represented by a different colored circle  -->
+  <div class="div_NFL"><img src="nfl-on.png" alt="NFL"></div>
+  <div class="div_MLB"><img src="mlb-on.png" alt="MLB"></div>
+  <div class="div_NBA"><img src="nba-on.png" alt="NBA"></div>
+  <div class="div_NHL"><img src="nhl-on.png" alt="NHL"></div>
   </div>
+</div>
+
+<footer><h2>References:</h2>
+    <ol>
+    <li>Data from <a href="https://www.wrhambrecht.com/wp-content/uploads/2013/09/SportsMarketReport_2012.pdf">THE U.S. PROFESSIONAL SPORTS MARKET &amp; FRANCHISE VALUE REPORT 2012</a></li>
+    <li><a href="http://bl.ocks.org/weiglemc/6185069">Scatterplot example in d3</a></li>
+    <li><a href="http://bl.ocks.org/nikolay-shenkov/raw/3c05dd0ec4b86cdbb968/">Gender inequality in primary school completion</a></li>
+    <li><a href="http://bl.ocks.org/WilliamQLiu/bd12f73d0b79d70bfbae">D3 Scatterplot (Animations)</a></li>
+    </ol>
+</footer>
+<script src="initialize_figure.js"></script>
+<script src="create_chart1.js"></script>
+<script src="create_chart2and3.js"></script>
 </body>
+
+<script>
+   d3.csv("dataset_ratio_growth.csv", function(d) {
+      d["Attendance"] = +d["Attendance"];
+      d["Revenue"] = +d["Revenue"];
+      d["AGrowth"] = +d["AGrowth"];
+      d["RGrowth"] = +d["RGrowth"];
+      //d["nYear"] = new Date(+d["nYear"], 0, 1);
+      d["ARPF"] = +d["Ratio"];
+      d["nYear"] = +d["nYear"];
+      return d;
+  }, createScatter);
+</script>
+
 </html>
