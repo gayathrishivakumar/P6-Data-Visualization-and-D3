@@ -1,0 +1,98 @@
+#scatter-container {
+    width: 70%;
+    float: left;
+    margin-left: 50px;
+}
+
+#buttons-container {
+    margin-top: 50px;
+    margin-left: 50px;
+}
+
+.buttons {
+    font-size: 22px;
+    margin-bottom: 30px;
+    font-family: Verdana;
+    border-radius: 10px;
+}
+
+.resetbuttons {
+    font-size: 22px;
+    margin-bottom: 30px;
+    font-family: Verdana;
+    border-radius: 10px;
+}
+
+#title {
+    font-family: Verdana;
+    text-align: center;
+    font-size: 30px;
+    font-weight: normal;
+}
+
+footer {
+    width: 100%;
+    float: left;
+    display: block;
+}
+
+
+.all-axis path,
+.all-axis line {
+    fill: none;
+    stroke: black;
+    shape-rendering: crispEdges;
+}
+
+.country {
+    opacity: 0.6;
+}
+
+.grid-line {
+    opacity: 0.2;
+}
+
+.tooltip {
+  position: absolute;
+  width: 350px;
+  font-size: 20px;
+  font-family: sans-serif;
+  pointer-events: none;
+  text-align: center;
+}
+
+.metrics, ol {
+    font-size: 18px;
+    font-family: Helvetica;
+}
+
+h2 {
+    font-family: Verdana;
+    font-weight: normal;
+    font-size: 20px;
+}
+
+footer {
+    margin-left: 50px;
+    margin-bottom: 20px;
+}
+.div_NHL { 
+    background-color: #c2e487; 
+    float:left; 
+    margin-right: 10px;
+}
+.div_NBA { 
+    background-color: #ebb980; 
+    float:left; 
+    margin-right: 10px;
+}
+.div_MLB { 
+    background-color: #ebbbb5; 
+    float:left;
+    margin-right: 10px;
+}
+.div_NFL { 
+    background-color: #95b8d1; 
+    float:left;
+    margin-right: 10px;
+}

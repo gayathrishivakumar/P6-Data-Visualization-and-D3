@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title align = "left">Comparing North America's Major Sports Leagues by Revenue &amp; Attendance</title>
+    <link rel="stylesheet" type="text/css" href="styles.css"/>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.5/d3.min.js"></script>
+</head>
+
+<body>
+<header id="title-container">
+    <h1 id="title">Comparing North America's Major Sports Leagues by Revenue &amp; Attendance</h1>
+</header>
+<section id="scatter-container"></section>
+<div id="buttons-container">
+  <button id="reset" class="resetbuttons">Reset</button>
+  <br>
+  <!--When these buttons are pressed, the data points for that year appear -->
+  <button id="Y2006" class="buttons">2006</button>
+  <br>
+  <button id="Y2007" class="buttons">2007</button>
+  <br>
+  <button id="Y2008" class="buttons">2008</button>
+  <br>
+  <button id="Y2009" class="buttons">2009</button>
+  <br>
+  <button id="Y2010" class="buttons">2010</button>
+  <br>
+  <button id="Y2011" class="buttons">2011</button>
+</div>
+<div id="logos-container">
+  <!--These logos act as a legend, each league is represnted by a different colored circle  -->
+  <div class="div_NHL"><img src="nhl-on.png" alt="NHL"></div>
+  <div class="div_NBA"><img src="nba-on.png" alt="NBA"></div>
+  <div class="div_MLB"><img src="mlb-on.png" alt="MLB"></div>
+  <div class="div_NFL"><img src="nfl-on.png" alt="NFL"></div>
+</div>
+<footer><h2>References:</h2>
+    <ol>
+    <li>Data from <a href="https://www.wrhambrecht.com/wp-content/uploads/2013/09/SportsMarketReport_2012.pdf">THE U.S. PROFESSIONAL SPORTS MARKET &amp; FRANCHISE VALUE REPORT 2012</a></li>
+    <li><a href="http://bl.ocks.org/weiglemc/6185069">Scatterplot example in d3</a></li>
+    <li><a href="http://bl.ocks.org/nikolay-shenkov/raw/3c05dd0ec4b86cdbb968/">Gender inequality in primary school completion</a></li>
+    <li><a href="http://bl.ocks.org/WilliamQLiu/bd12f73d0b79d70bfbae">D3 Scatterplot (Animations)</a></li>
+    </ol>
+</footer>
+<script src="initialize_figure.js"></script>
+<script src="create_vis.js"></script>
+</body>
+
+<script>
+   d3.csv("dataset.csv", function(d) {
+      d["Attendance"] = +d["Attendance"];
+      d["Revenue"] = +d["Revenue"];
+      return d;
+  }, createVis);
+</script>
+
+</html>
